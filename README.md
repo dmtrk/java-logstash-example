@@ -1,6 +1,9 @@
 # java-logstash-example
 Examples of using logback (with logstash-logback-encoder) to send logging output to logstash<br/>
-https://balamaci.ro/java-app-monitoring-with-elk-logstash/
+https://balamaci.ro/java-app-monitoring-with-elk-logstash/<br/><br/>
+
+download and start local instance of logstash before running test:<br/>
+./bin/logstash -e "input { tcp {port => 5566 codec => json} } filter { sleep { time => 1 } } output { stdout { codec => json } }"<br/><br/>
 
 ## Build/Release
 Release task and version generation is handled by 'pl.allegro.tech.build.axion-release' plugin.<br/>
